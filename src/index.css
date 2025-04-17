@@ -1,0 +1,516 @@
+/* =========================== */
+/*         Global Styles       */
+/* =========================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Dark Mode */
+.app-container.dark {
+  background-color: #1e1e1e;
+  color: #eaeaea;
+}
+
+/* =========================== */
+/*         Navbar Styles       */
+/* =========================== */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2d3e50;
+  padding: 12px 24px;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-title {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.navbar-subtitle {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.mailbox-icon {
+  cursor: pointer;
+}
+
+/* Dark mode overrides for navbar */
+.app-container.dark .navbar {
+  background-color: #1e2a38;
+}
+
+/* =========================== */
+/*      Main Layout Styles     */
+/* =========================== */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px;
+}
+
+.page-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 24px;
+}
+
+.page-title {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+/* =========================== */
+/*      About Section (Home)   */
+/* =========================== */
+
+.about-section {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.about-title {
+  font-size: 40px;
+  margin-bottom: 16px;
+  color: #2d3e50;
+}
+
+.about-desc {
+  font-size: 18px;
+  max-width: 800px;
+  margin: 0 auto 16px;
+  color: #555;
+}
+
+/* =========================== */
+/*      Plus Button (Admin)    */
+/* =========================== */
+
+.plus-button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #27ae60;
+  color: #fff;
+  font-size: 36px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
+  z-index: 200;
+  transition: transform 0.2s ease;
+}
+
+.plus-button:hover {
+  transform: scale(1.05);
+}
+
+/* =========================== */
+/*         Feed & Posts        */
+/* =========================== */
+
+.feed-section {
+  margin-top: 20px;
+}
+
+.feed-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #2d3e50;
+}
+
+/* Post Card */
+.post {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s ease;
+}
+
+.post:hover {
+  transform: translateY(-2px);
+}
+
+.post img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.post-title {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #2d3e50;
+}
+
+.post-content {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Post Interactions */
+.post-interactions {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 16px;
+}
+
+.like-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #e74c3c;
+  cursor: pointer;
+}
+
+/* =========================== */
+/*    Comment Section Styles   */
+/* =========================== */
+
+/* Comment list: fixed height so that more than 3 comments scroll vertically */
+.comment-list {
+  max-height: 80px; /* Adjust based on your font size */
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+.comment-item {
+  background-color: #f1f1f1;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Input and button for adding comments */
+.comment-input-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.comment-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.comment-button {
+  padding: 8px 12px;
+  background-color: #3498db;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* =========================== */
+/*      Post Creator Modal     */
+/* =========================== */
+
+.creator-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+}
+
+.creator-container {
+  background: #fff;
+  padding: 24px;
+  width: 420px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.creator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.creator-container h3 {
+  font-size: 22px;
+  color: #2d3e50;
+}
+
+.close-creator {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.creator-form .creator-input,
+.creator-form .creator-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.creator-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #27ae60;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* =========================== */
+/*       Mailbox Overlay       */
+/* =========================== */
+
+.mailbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 150;
+}
+
+.mailbox-container {
+  background: #f7f7f7;
+  padding: 24px;
+  border-radius: 6px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.mailbox-title {
+  font-size: 22px;
+  margin-bottom: 14px;
+  color: #2d3e50;
+}
+
+.mailbox-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.mailbox-buttons {
+  margin-bottom: 12px;
+}
+
+.mailbox-button {
+  padding: 10px 16px;
+  margin: 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.mailbox-unlock {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.mailbox-cancel {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.mailbox-close {
+  background-color: #333;
+  color: #fff;
+}
+
+.mailbox-reset {
+  margin-top: 10px;
+}
+
+.reset-link {
+  background: none;
+  border: none;
+  color: #2980b9;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.reset-section {
+  margin-top: 16px;
+}
+
+/* =========================== */
+/*      Security Question      */
+/* =========================== */
+
+.security-question {
+  background: #fff;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 12px;
+  text-align: left;
+}
+
+.security-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #2d3e50;
+}
+
+.security-text {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #555;
+}
+
+.security-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 15px;
+}
+
+.security-button {
+  padding: 8px 12px;
+  background-color: #27ae60;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* =========================== */
+/*        Contact Form         */
+/* =========================== */
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-size: 15px;
+}
+
+.contact-button {
+  padding: 12px 18px;
+  background-color: #2980b9;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-success {
+  font-size: 18px;
+  color: #27ae60;
+  text-align: center;
+}
+
+/* =========================== */
+/*           Footer            */
+/* =========================== */
+
+.footer {
+  background-color: #2d3e50;
+  color: #fff;
+  text-align: center;
+  padding: 16px 12px;
+  font-size: 14px;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+}

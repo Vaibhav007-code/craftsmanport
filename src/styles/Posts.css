@@ -1,0 +1,78 @@
+.posts-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.posts-container {
+  display: grid;
+  gap: 2rem;
+}
+
+.instagram-post {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.instagram-post:hover {
+  transform: translateY(-2px);
+}
+
+.post-header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.post-media {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+}
+
+.post-actions {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.post-details {
+  padding: 1rem;
+}
+
+.likes-count {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.caption {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.timestamp {
+  font-size: 0.8rem;
+  color: #8e8e8e;
+}
+
+.comment-section {
+  padding: 0 1rem 1rem;
+}

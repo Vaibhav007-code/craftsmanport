@@ -1,0 +1,184 @@
+.mailbox-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mailbox-container.dark {
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+.mailbox-container h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dark .mailbox-container h2 {
+  color: var(--text-color);
+}
+
+.no-messages {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  background: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.dark .no-messages {
+  color: var(--text-tertiary);
+}
+
+.messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.message-card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.dark .message-card {
+  background: var(--card-bg);
+  box-shadow: var(--shadow-md);
+}
+
+.message-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.message-card.unread {
+  border-left: 4px solid var(--primary);
+  background: linear-gradient(to right, rgba(var(--accent-rgb), 0.05), var(--card-bg));
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.message-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.dark .message-info h3 {
+  color: var(--text-color);
+}
+
+.contact-info {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.dark .contact-info {
+  color: var(--text-tertiary);
+}
+
+.contact-info p {
+  margin: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-info a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-info a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.message-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mark-read-btn,
+.delete-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mark-read-btn {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.mark-read-btn:hover {
+  background-color: var(--success-dark);
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: var(--danger-dark);
+  transform: translateY(-1px);
+}
+
+.message-content {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.dark .message-content {
+  border-top-color: var(--border-color);
+  color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+  .mailbox-container {
+    padding: 1rem;
+  }
+
+  .message-card {
+    padding: 1rem;
+  }
+
+  .message-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .message-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
